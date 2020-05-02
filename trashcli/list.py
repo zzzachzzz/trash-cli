@@ -29,6 +29,7 @@ class ListCmd:
         self.contents_of  = file_reader.contents_of
         self.version      = version
 
+    # TODO Add support for option --trash-dir
     def run(self, *argv):
         parse=Parser()
         parse.on_help(PrintHelp(self.description, self.output.println))

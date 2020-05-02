@@ -171,8 +171,11 @@ Report bugs to https://github.com/andreafrancia/trash-cli/issues""")
                 volume_of_trash_dir = self.volume_of(self.realpath(trash_dir.path))
                 self.reporter.trash_dir_with_volume(trash_dir.path,
                                                     volume_of_trash_dir)
-                if self._file_could_be_trashed_in(volume_of_file_to_be_trashed,
-                                                  volume_of_trash_dir):
+                # if self._file_could_be_trashed_in(volume_of_file_to_be_trashed,
+                #                                   volume_of_trash_dir):
+                # Trash files in candidate trash dir regardless of if
+                # the volumes match. (checked by _file_could_be_trashed_in)
+                if True:
                     try:
                         trash_dir.trash2(file, self.now, self.logger)
                         self.reporter.file_has_been_trashed_in_as(

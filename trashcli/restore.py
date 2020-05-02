@@ -31,6 +31,7 @@ class RestoreCmd(object):
                 mount_points = fstab.mount_points()
                 )
         self.all_trash_directories2 = all_trash_directories.all_trash_directories
+    # TODO Add support for option --trash-dir
     def run(self, argv):
         if '--version' in argv[1:]:
             command = os.path.basename(argv[0])
